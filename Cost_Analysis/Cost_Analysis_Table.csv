@@ -1,0 +1,22 @@
+Category,Metric,Before (Baseline),After (Optimized),Savings / Delta,Percentage Reduction
+Technique 1: Image Size,Base Docker Image,python:3.11 Debian,python:3.11-slim Multi-stage,Compilers removed,N/A
+Technique 1: Image Size,Container Image Size (MB),1018 MB,124 MB,-894 MB,87.8%
+Technique 1: Image Size,Cold Pull Latency (sec),16.3s,1.9s,-14.4s,88.3%
+Technique 1: Image Size,Known Vulnerabilities (CVEs),184 CVEs,24 CVEs,-160 CVEs,86.9%
+Technique 1: Image Size,Monthly Registry Storage,$1.02 / mo,$0.12 / mo,-$0.90 / mo,88.2%
+Technique 1: Image Size,Monthly Egress (100 pulls),$9.16 / mo,$1.12 / mo,-$8.04 / mo,87.8%
+Technique 2: Right-Sizing,Web Pod CPU Request,1000m (1.0 core),100m (0.1 core),-900m,90.0%
+Technique 2: Right-Sizing,Web Pod RAM Request,1024 MiB,128 MiB,-896 MiB,87.5%
+Technique 2: Right-Sizing,Total Reserved vCPU,2.50 vCPU,0.25 vCPU,-2.25 vCPU,90.0%
+Technique 2: Right-Sizing,Pod Density (per 2 vCPU node),2 pods / node,18 pods / node,+16 pods / node,900.0%
+Technique 2: Right-Sizing,Required Compute Instance,2x m5.large,1x t4g.small,Hardware shrunk,N/A
+Technique 2: Right-Sizing,Monthly Compute Cost,$140.16 / mo,$12.26 / mo,-$127.90 / mo,91.3%
+Technique 3: Autoscaling,Provisioning Strategy,Static 6 pods 24/7,Dynamic HPA (2 to 6),Elasticity,N/A
+Technique 3: Autoscaling,Average Daily Replicas,6.00 pods,2.55 pods,-3.45 pods,57.5%
+Technique 3: Autoscaling,Monthly Compute Cost,$82.50 / mo,$35.10 / mo,-$47.40 / mo,57.5%
+Technique 3: Autoscaling,Annual Compute Cost,$990.00 / yr,$421.20 / yr,-$568.80 / yr,57.5%
+Overall Annual Totals,Compute Worker Nodes,$1681.92 / yr,$147.12 / yr,-$1534.80 / yr,91.3%
+Overall Annual Totals,Autoscaling Elasticity,$990.00 / yr,$421.20 / yr,-$568.80 / yr,57.5%
+Overall Annual Totals,Registry Storage & Egress,$232.32 / yr,$27.84 / yr,-$204.48 / yr,88.0%
+Overall Annual Totals,TOTAL ANNUAL EXPENDITURE,$2904.24 / yr,$596.16 / yr,-$2308.08 / yr,79.5%
+
